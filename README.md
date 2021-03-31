@@ -1,2 +1,0 @@
-# PvJs
-ProyectoRedSocial
