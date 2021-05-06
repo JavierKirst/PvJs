@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="row py-5 px-4">
+    <div class="col-md-8 mx-auto">
+        <!-- Profile widget -->
+        <div class="bg-white shadow rounded overflow-hidden">
+            <div class="row">
+                <div class=" col-6 bg-light p-4 d-flex justify-content-start text-center">
+                <h2><!-- meter ruta para mostrar la foto  -->{{session['foto']}}Foto</h2>
+                <h2 class="m-auto mt-0 mb-0 text-center" color="#ffffff">{{session['usuario'] }}</h2>
+                </div>
+                <div class=" col-6 bg-light p-4 d-flex justify-content-end text-center">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <h5 class="font-weight-bold mb-0 d-block">{{ numFotos }}</h5><small class="text-muted"> <i class="fas fa-image mr-1"></i>Publicaciones</small>
+                        </li>
+                        <li class="list-inline-item">
+                            <h5 class="font-weight-bold mb-0 d-block">{{ nseguidores }}</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Seguidores</small>
+                        </li>
+                        <li class="list-inline-item">
+                            <h5 class="font-weight-bold mb-0 d-block">{{ nseguidos }}</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Seguidos</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="px-4 py-3">
+                <p class="mb-0 w-25 h5">Biografia</p>
+                <div class="p-4 rounded shadow-sm bg-light">
+                    {{session['biografia']}}
+                </div>
+            </div>
+
+            <div class="py-4 px-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h5 class="mb-0">Publicaciones</h5>
+                </div>
+                <div class="row">
+                    <!-- HACER BUCLE PARA MOSTRAR TODAS LAS FOTOS  -->
+                    {% if publicaciones %}
+                        {% for publicacion in publicaciones %}
+                        <div class="col-lg-6 mb-2 pr-lg-1"><img src="publicacion" alt="" class="img-fluid rounded shadow-sm"></div>
+                        {% endfor %}
+                    {% else %}
+                        <div><p><strong>No hay ninguna publicacion</strong></p></div>
+                    {% endif %}
+                    <a href="/config" class="d-flex navbar-brand justify-content-end"><i class="fas fa-wrench"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
