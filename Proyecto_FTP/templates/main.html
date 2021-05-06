@@ -1,9 +1,79 @@
 {% extends 'layout.html' %}
-<link rel='stylesheet' href="{{url_for('static', filename='css/main.css')}}"> +
 {% block body %}
 
-<!--perfil-->
-<!--publicaciones-->
-<!--chat-->
+
+<!------------------------------ PUBLICACIONES---------------------------->
+<div class="col-7">
+
+
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <div class="card">
+          <h3 class="card-title">@usuario</h3>
+      </h4>
+    </div>
+    <div class="panel-body">
+
+      <img class="card-img-top"
+        src="https://t2.pb.ltmcdn.com/es/posts/5/5/0/como_conocer_gente_en_una_ciudad_nueva_4055_orig.jpg">
+
+      <div class="card-body">
+        Foto tomada durante el día de hoy<br>
+        <div class="prueba">
+          <div class="like"><button type="button" class="btn btn-danger">Like</button></div>
+          <div class="comentar"> <button type="button" class="btn btn-secondary">Comentar</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="comentarios">
+      <div class="panel panel-default">
+        <div class="panel-heading">Comentarios</div>
+        <div class="panel-body">
+          <div class="panel panel-danger">
+
+            <div class="panel-heading">
+              <h5 class="panel-title">@usuarioComenta</h3>
+            </div>
+
+            <div class="panel-body" id="coment">
+              Aupa Atleti hostiaaaaa!!!!!
+              <button type="button" id="eliminar" class="btn btn-danger btn-xs">Eliminar</button>
+            </div>
+
+            <div class="panel-heading">
+              <h5 class="panel-title">@usuarioComenta2</h3>
+            </div>
+
+            <div class="panel-body">
+              Aupaaaaa!!!
+              <button type="button" id="eliminar" class="btn btn-danger btn-xs">Eliminar</button>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+</div>
+
+<!-------------------------------------------------------------------------->
+
+
+
+<!-- Cambiar Modo -->
+<button type="button" class="btn btn-dark mb-3" onclick="cambiarModo();">Claro / Oscuro</button>
+
+<!-- Resetear configuración -->
+<button type="button" class="btn btn-secondary mb-3" onclick="resetear();">Resetear</button>
 
 {% endblock %}
